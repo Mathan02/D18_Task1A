@@ -1,0 +1,107 @@
+def fun():
+  print("Username :",end="")
+  x=input()
+  y=[str(i) for i in x]
+  for i in y:
+    n=y.index("@")
+    if "@" and "." in y and y[0]!="@" and ord(y[0]) in range(97,123):
+        #print("correct",x)
+        break
+    elif y.index(".")==(n+1) and y[0]=="@" or ord(y[0]) in range(48,58) or ord(y[0]) in range(0,48) or ord(y[0]) in range(58,65) or ord(y[0]) in range(91,97) or ord(y[0]) in range(123,128)and "@" and "." not in y :
+        print("Please enter a valid username again :")
+        fun()
+        break
+  #return x             
+def func4(z):#special character
+  for i in z:
+    if ord(i) in range(0,48) or ord(i) in range(58,65) or ord(i) in range(91,97) or ord(i) in range(123,128) :
+      #print("correct4")
+      h.append(int(4)) 
+  #print(h) 
+def func3(z):
+  for i in z:#upper
+    if ord(i) in range (65,91):
+      #print("correct3")
+      h.append(int(3))
+  #print(h)
+  func4(z) 
+def func2(z):
+  #print(z)
+  for i in z:#lower
+    if ord(i) in range (97,123):
+      #print("correct2")
+      h.append(int(2)) 
+  #print(h)
+  func3(z)
+def func1(z):#number
+  for i in z:
+    if ord(i) in range (48,58):
+      #print("correct1")   
+      h.append(int(1))
+  #print(h)
+  func2(z) 
+def func5():
+  print("Password :",end="")
+  p=input()
+  z=[str(i) for i in p]
+  if len(z) in range(5,17): 
+    #print(z)
+    func1(z)
+    #print(len(list(set(h))))
+  if len(list(set(h)))==4:
+    print("valid Username and Password")  
+  elif len(list(set(h)))!=4:
+    #print("Type valid pass")
+    h.clear()
+    das()
+  return p            
+def das():
+  func5()
+#username           
+print("Registration")
+print("Username :",end="")
+x=input()
+y=[str(i) for i in x]
+#print(y)
+for i in y:
+  n=y.index("@")
+  if "@" and "." in y and y[0]!="@" and ord(y[0]) in range(97,123):
+      #print("correct")
+      break
+  elif y.index(".")==(n+1) and y[0]=="@" or ord(y[0]) in range(48,58) or ord(y[0]) in range(0,48) or ord(y[0]) in range(58,65) or ord(y[0]) in range(91,97) or ord(y[0]) in range(123,128)and "@" and "." not in y :
+      print("Please enter a valid username")
+      fun()
+      #print(x1)
+      break
+#Password        
+h=[]
+d=func5() 
+#print(x1)  
+#saving to a file
+c=open("credentials.txt","w")
+c.write(x)
+c.write('\n')
+c.write(d)
+c.write
+c.close
+c=open("credentials.txt","r")
+#logging in
+print("Login")
+#print(x1)
+print("Username :",end="")
+q=input()
+if x==q:
+  print("Password :",end="")
+  w=input()
+  if d==w:
+    print("welcome")
+  else:
+    print("Password entered is incorrect. Forget Password? Then type 'Y' to retrive password")
+    m=input()
+    if m=="Y":
+      print("your password :",d)  
+else:
+  print("Username does not exist please Rigister :") 
+  fun()
+  func5() 
+  print("successfully registered")  
